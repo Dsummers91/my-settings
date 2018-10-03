@@ -4,6 +4,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vader.vim'
 Plug 'scrooloose/nerdcommenter'
 
+set paste
+verbose set autoindent
+
 syntax on
 filetype plugin indent on
 " show existing tab with 4 spaces width

@@ -8,6 +8,8 @@ case $- in
       *) return;;
 esac
 
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -122,9 +124,9 @@ fi
 
 export PATH=${HOME}/.npm-global/bin:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH=$PATH:$HOME/.rvm/bin
@@ -142,6 +144,9 @@ export PATH=$PATH:$HOME/.local/bin
 alias python=python3
 alias chrome=google-chrome-stable
 eval "$(direnv hook bash)"
+
+#disable caps lock
+setxkbmap -option caps:none
 
 # added by travis gem
 [ -f /home/deon/.travis/travis.sh ] && source /home/deon/.travis/travis.sh

@@ -16,6 +16,7 @@ cd() {
         echo -e "\e[31mbash: cd $1 No such file or directory"
       fi
   fi
+
 	IFS="/"; declare -a Array=($PWD) 
 	export PS1="\e[34m${Array[-1]} \e[39m\$ "
   unset IFS
@@ -26,3 +27,4 @@ if [ -e /home/deon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/deon/.nix-p
 
 
 eval "$(direnv hook bash)"
+alias rusti="rustup run nightly-2016-08-01 ~/.cargo/bin/rusti"
